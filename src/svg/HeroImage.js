@@ -5,7 +5,7 @@ const HeroImage = () => (
 		id="a644d002-dee1-4c60-b6d8-14071a55f848"
 		data-name="Layer 1"
 		xmlns="http://www.w3.org/2000/svg"
-		width="500.92126"
+		width="800.92126"
 		height="500.45739"
 		viewBox="0 0 1100.92126 597.45739"
 	>
