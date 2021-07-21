@@ -7,7 +7,7 @@ const HeroImage = () => (
 		xmlns="http://www.w3.org/2000/svg"
 		width="500.92126"
 		height="500.45739"
-		viewBox="0 0 750.92126 597.45739"
+		viewBox="0 0 1100.92126 597.45739"
 	>
 		<circle
 			id="a21b076b-2a02-49a5-bb32-17a8ec3aa4f0"
