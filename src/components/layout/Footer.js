@@ -14,10 +14,10 @@ const Footer = () => (
         <h2 className="text-lg font-semibold">Important Links</h2>
         <ul className="mt-4 leading-loose">
           <li>
-            <a href="">Terms &amp; Conditions</a>
+            <a href="https://tanmupms.com">Terms &amp; Conditions</a>
           </li>
           <li>
-            <a href="">Privacy Policy</a>
+            <a href="https://tanmupms.com">Privacy Policy</a>
           </li>
         </ul>
       </div>
