@@ -13,7 +13,7 @@ import SEO from '../components/seo';
 
 const Index = () => (
 	<Layout>
-		<SEO title="Tanmu Project Management" />
+		<SEO title="Homepage" />
 		<section className="pt-20 md:pt-40">
 			<div className="container mx-auto px-8 lg:flex">
 				<div className="text-center lg:text-left lg:w-1/2">
@@ -149,8 +149,9 @@ const Index = () => (
 			secondarySlot={<SvgCharts />}
 		/>
 		<SplitSection
+			reverseOrder
 			primarySlot={
-				<div className="lg:pr-32 xl:pr-48">
+				<div className="lg:pl-32 xl:pl-48">
 					<h3 className="text-3xl font-semibold leading-tight">
 						MARRIOTT STAFF ACCOMMODATION BUILDING- DUBAILAND, UAE.
 					</h3>
@@ -195,7 +196,7 @@ const Index = () => (
 				</div>
 			</div>
 		</section>
-		<section className="container mx-auto my-20 py-24 bg-gray-200 rounded-lg text-center">
+		<section id="contact" className="container mx-auto my-20 py-24 bg-gray-200 rounded-lg text-center">
 			<h3 className="text-5xl font-semibold">Experience world class project management</h3>
 			<p className="mt-8 text-xl font-light">Get in touch with us today!</p>
 			<p className="mt-8">
