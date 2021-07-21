@@ -9,7 +9,7 @@ const Header = () => (
         <div className="w-12 mr-3">
           <LogoIcon />
         </div>
-        Tanmu
+        TANMU
       </div>
       <div className="flex mt-4 sm:mt-0">
         <AnchorLink className="px-4" href="#features">
@@ -17,12 +17,6 @@ const Header = () => (
         </AnchorLink>
         <AnchorLink className="px-4" href="#services">
           Projects
-        </AnchorLink>
-        <AnchorLink className="px-4" href="#stats">
-          Stats
-        </AnchorLink>
-        <AnchorLink className="px-4" href="#testimonials">
-          Testimonials
         </AnchorLink>
         <AnchorLink className="px-4" href="#contact">
           Contact Us
