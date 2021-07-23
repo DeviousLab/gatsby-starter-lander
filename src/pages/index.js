@@ -10,6 +10,8 @@ import customerData from '../data/customer-data';
 import HeroImage from '../svg/HeroImage';
 import SvgCharts from '../svg/SvgCharts';
 import SEO from '../components/seo';
+import { graphql } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const Index = () => (
 	<Layout>
@@ -36,49 +38,43 @@ const Index = () => (
 					<div className="flex-1 px-3">
 						<Card className="mb-8">
 							<p className="font-semibold text-xl">Conceptualisation Stage</p>
-							<p className="mt-4">
-								<ul>
-									<li>Owner's Representation</li>
-									<li>Feasability</li>
-									<li>Conceptual Design</li>
-									<li>Design Standards</li>
-									<li>Cost Estimating</li>
-									<li>Project Team Selection</li>
-									<li>Funding Documents</li>
-								</ul>
-							</p>
+							<ul className="mt-4">
+								<li>Owner's Representation</li>
+								<li>Feasability</li>
+								<li>Conceptual Design</li>
+								<li>Design Standards</li>
+								<li>Cost Estimating</li>
+								<li>Project Team Selection</li>
+								<li>Funding Documents</li>
+							</ul>
 						</Card>
 					</div>
 					<div className="flex-1 px-3">
 						<Card className="mb-8">
 							<p className="font-semibold text-xl">Creation Stage</p>
-							<p className="mt-4">
-								<ul>
-									<li>Owner's Representation</li>
-									<li>Design Development</li>
-									<li>Technical Direction</li>
-									<li>Energy Optimisation</li>
-									<li>Vendor Selection</li>
-									<li>Review of Compliance</li>
-									<li>Technical Integration</li>
-								</ul>
-							</p>
+							<ul className="mt-4">
+								<li>Owner's Representation</li>
+								<li>Design Development</li>
+								<li>Technical Direction</li>
+								<li>Energy Optimisation</li>
+								<li>Vendor Selection</li>
+								<li>Review of Compliance</li>
+								<li>Technical Integration</li>
+							</ul>
 						</Card>
 					</div>
 					<div className="flex-1 px-3">
 						<Card className="mb-8">
 							<p className="font-semibold text-xl">Execution Stage</p>
-							<p className="mt-4">
-								<ul>
-									<li>Owner's Representation</li>
-									<li>Project Management</li>
-									<li>Procurement</li>
-									<li>FF&E and OSE</li>
-									<li>Quality Monitoring</li>
-									<li>Testung & Commissioning</li>
-									<li>Handover Documentation</li>
-								</ul>
-							</p>
+							<ul className="mt-4">
+								<li>Owner's Representation</li>
+								<li>Project Management</li>
+								<li>Procurement</li>
+								<li>FF&E and OSE</li>
+								<li>Quality Monitoring</li>
+								<li>Testung & Commissioning</li>
+								<li>Handover Documentation</li>
+							</ul>
 						</Card>
 					</div>
 				</div>
@@ -173,13 +169,13 @@ const Index = () => (
 				<LabelText className="text-gray-600">Our customers get results</LabelText>
 				<div className="flex flex-col sm:flex-row mt-8 lg:px-24">
 					<div className="w-full sm:w-1/3">
-						<StatsBox primaryText="+100%" secondaryText="Stats Information" />
+						<StatsBox primaryText="1 Billion+" secondaryText="AED Delivered" />
 					</div>
 					<div className="w-full sm:w-1/3">
-						<StatsBox primaryText="+100%" secondaryText="Stats Information" />
+						<StatsBox primaryText="30+" secondaryText="Years of Experience" />
 					</div>
 					<div className="w-full sm:w-1/3">
-						<StatsBox primaryText="+100%" secondaryText="Stats Information" />
+						<StatsBox primaryText="1.5 Million+" secondaryText="sq ft Built up Area" />
 					</div>
 				</div>
 			</div>
@@ -200,10 +196,37 @@ const Index = () => (
 			<h3 className="text-5xl font-semibold">Experience world class project management</h3>
 			<p className="mt-8 text-xl font-light">Get in touch with us today!</p>
 			<p className="mt-8">
-				<Button size="xl">Get Started Now</Button>
+				<Button size="xl">
+					<a href="mailto:your@email.address" />Get Started Now
+				</Button>
 			</p>
 		</section>
 	</Layout>
 );
 
 export default Index;
+
+export const pageQuery = graphql`
+	query {
+		projectPictures: allFile(
+			filter: {extension: {regex: "/(jpg)|(jpeg)/"}, relativeDirectory: {}}
+			sort: {fields: base, order: ASC}
+			) {
+			edges {
+				node {
+				id
+				base
+				childImageSharp {
+					gatsbyImageData(
+					width: 500
+					blurredOptions: {width: 100}
+					placeholder: BLURRED
+					transformOptions: {cropFocus: CENTER}
+					aspectRatio: 1
+					)
+				}
+			}
+			}
+		}
+		}
+	}`;
