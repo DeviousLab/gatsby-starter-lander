@@ -10,8 +10,6 @@ import customerData from '../data/customer-data';
 import HeroImage from '../svg/HeroImage';
 import SvgCharts from '../svg/SvgCharts';
 import SEO from '../components/seo';
-import { graphql } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const Index = () => (
 	<Layout>
@@ -205,28 +203,3 @@ const Index = () => (
 );
 
 export default Index;
-
-export const pageQuery = graphql`
-	query {
-		projectPictures: allFile(
-			filter: {extension: {regex: "/(jpg)|(jpeg)/"}, relativeDirectory: {}}
-			sort: {fields: base, order: ASC}
-			) {
-			edges {
-				node {
-				id
-				base
-				childImageSharp {
-					gatsbyImageData(
-					width: 500
-					blurredOptions: {width: 100}
-					placeholder: BLURRED
-					transformOptions: {cropFocus: CENTER}
-					aspectRatio: 1
-					)
-				}
-			}
-			}
-		}
-		}
-	}`;
