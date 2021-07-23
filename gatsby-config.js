@@ -24,6 +24,14 @@ module.exports = {
         icon: 'src/images/logo.png',
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/`,
+      },
+    },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
     'gatsby-plugin-react-helmet',
   ]
 };
